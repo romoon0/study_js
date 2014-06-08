@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>이유뇽님이 내준 과제 2</title>
+</head>
+<body>
+<code>
+	<pre>
+	var tellYourName = function(name){
+	     this.name = name;
+	     this.tell = function(){
+	          return this.name + " 입니다";
+	     }
+	}	
+	</pre>
+</code>
+
+<p>
+이 밑에다가 코드를 추가해
+"둘리 입니다." 가 나오면 됨
+
+1. 위 코드는 건들 수 없다. 밑에 추가만 가능
+2. 둘리 여야함
+</p>
+<script>
+var tellYourName = function(name){
+     this.name = name;
+     this.tell = function(){
+          return this.name + " 입니다";
+     }
+}
+var name_introduce = new tellYourName("둘리");
+alert(name_introduce.tell() + ".");
+</script>
+	
+</body>
+</html>
