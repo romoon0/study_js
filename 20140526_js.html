@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>이유뇽님이 내준 과제 1</title>
+</head>
+<body>
+<script>
+function numInputReverse(){
+	var str = prompt("숫자를 입력하세요.","");
+	str = str.replace(/\s/g,""); //공백제거
+	function errorReturn(){
+	}
+	if(str == "" || !Number(str)){ //공백이거나 숫자값이 아니라면(에러의향연)
+		alert("숫자를 2자리 이상 입력하세요" + "\n" + "입력한문자 : " + str);
+		numInputReverse();
+	}
+	else{
+		var strs = str.split("");
+		str_reverse = strs.reverse(); //배열순서반전
+		str_reverse = str_reverse.join(""); // 배열의값들을 하나의 변수로 순서대로 합침  
+		int_plus = parseInt(str_reverse) + 1; // string을 int값으로 변경
+		alert("입력문자 : " + str + "\n" + "뒤집어봅니다 : " + str_reverse + "\n" +"거기에 1을 더하면 : " + int_plus );
+	}
+}
+
+window.onload=numInputReverse();
+
+</script>
+	
+</body>
+</html>
