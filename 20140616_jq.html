@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery-1</title>
+	<meta charset="utf-8">
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+	<button type="button">닫기</button>
+	<div>내용입니다0</div>
+	<div>내용입니다1</div>
+	<div>내용입니다2</div>
+	<div>내용입니다3</div>
+
+	<script>
+	$("button").click(function(){
+		$("div").toggle();
+		var txt = $(this).text();
+		$(this).text(txt == "닫기"?"열기":"닫기");
+	});
+</script>	
+</body>
+</html>

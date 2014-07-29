@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>용과4</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<style>
+#box div {width:100px;height:100px;background-color:gold;}
+</style>	
+</head>
+<body>
+<div id="box">
+	<button>열기</button>
+	<div>내용1</div>
+	<button>열기</button>
+	<div>내용2</div>
+	<button>열기</button>
+	<div>내용3</div>
+	<button>열기</button>
+	<div>내용4</div>
+</div>
+<script>
+$("#box").each(function(){
+	//내용다닫기
+	var box = $(this);
+	var btns = box.find("button");
+	var divs = box.find("div");
+	divs.hide();
+	btns.text("열기");
+	//어딘가 클릭되면
+	btns.click(function(){
+		var btn_on = $(this);
+		var cont_on = btn_on.next();
+		cont_on.toggle(function(){
+			var txt = btn_on.text();
+			btn_on.text(txt == "열기"?"닫기":"열기");
+		});
+	});
+});
+</script>
+	
+</body>
+</html>
