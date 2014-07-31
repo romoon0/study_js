@@ -23,18 +23,20 @@ div {width:100px;height:100px;background-color:gold}
 $(function(){
 	// div 닫기
 	$("div").addClass("hide");
+	var btns = $("button");
 	// 버튼클릭되면 > div 닫기 > 선택된 버튼옆 div 열기
-	$("button").click(function(){		
+	btns.click(function(){		
 		var btn = $(this);
 		var box = btn.next();
 		var txt_btn = btn.text();
 		// 열려있을땐 다시 닫기
 		$("div").addClass("hide");
 		if(txt_btn === "열기"){
+			btns.text("열기");
 			btn.text("닫기");
 			box.removeClass("hide");	
 		}else {
-			btn.text("열기");
+			btns.text("열기");
 		}
 	});
 });
