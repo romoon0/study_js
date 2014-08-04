@@ -21,22 +21,24 @@ div {width:100px;height:100px;background-color:gold}
 	<div>내용5</div>
 <script>
 $(function(){
-	// div 닫기
-	$("div").addClass("hide");
 	var btns = $("button");
-	// 버튼클릭되면 > div 닫기 > 선택된 버튼옆 div 열기
-	btns.click(function(){		
-		var btn = $(this);
-		var box = btn.next();
-		var txt_btn = btn.text();
-		// 열려있을땐 다시 닫기
-		$("div").addClass("hide");
-		if(txt_btn === "열기"){
-			btns.text("열기");
-			btn.text("닫기");
-			box.removeClass("hide");	
-		}else {
-			btns.text("열기");
+	var boxs = $("div");
+	var txt_open = "열기";
+	var txt_close = "닫기";
+	var hide = "hide";
+	boxs.addClass(hide);
+	btns.click(function(){
+		var currentBtn = $(this);
+		var currentBox = currentBtn.next();
+		// 새로운걸 누르면.. 모든걸 닫고, 열기로 다 바꾸고,
+		if(currentBox.hasClass(hide)){
+			boxs.addClass(hide);
+			btns.text(txt_open);
+			currentBtn.text(txt_close);
+			currentBox.removeClass(hide);
+		} else {// 열려 있는걸 누르면.. 다 닫고
+			currentBtn.text(txt_open);
+			boxs.addClass(hide);
 		}
 	});
 });
